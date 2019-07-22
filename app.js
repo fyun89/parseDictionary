@@ -99,8 +99,8 @@ async function processLineByLine(fn) {
     }
     if (!enable && counter) {
       bucket.push(output);
-      counter++
-      ws.write(`\n "${output['word']}": ${JSON.stringify(bucket)}, `)
+      counter++;
+      ws.write(`\n "${output['word']}": ${JSON.stringify(bucket)}, `);
       break;
     }
     if (doubleSpaced.status && enable) {
@@ -114,7 +114,7 @@ async function processLineByLine(fn) {
         } else if (output['word']) {
           bucket.push(output);
           counter++;
-          ws.write(`\n "${output['word']}": ${JSON.stringify(bucket)}, `)
+          ws.write(`\n "${output['word']}": ${JSON.stringify(bucket)}, `);
           bucket = [];
           output = {};
         }
@@ -173,7 +173,7 @@ async function processLineByLine(fn) {
 
     }
   }
-  ws.write('\n}')
+  ws.write('\n}');
 }
 
 processLineByLine();
